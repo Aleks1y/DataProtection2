@@ -179,7 +179,7 @@ int main()
         size = fread(buffer, 1, 1024, file);
         sha256_update(&buff, buffer, size);
     }
-    char hash[65] = { 0 }; /* hash[64] is null-byte */
+    char hash[65] = { 0 };
     sha256_finalize(&buff);
     sha256_read_hex(&buff, hash);
     printf("%s\n", hash);
